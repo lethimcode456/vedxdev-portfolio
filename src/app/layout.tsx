@@ -7,6 +7,7 @@ import CursorGlow from "@/components/CursorGlow";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Noise from "@/components/Noise";
 import LandingAnimation from "@/components/LandingAnimation";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
