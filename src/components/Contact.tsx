@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Reveal from "./Reveal";
-import { Mail, Github, Instagram, Linkedin, Dribbble, MapPin, Phone } from "lucide-react";
+import { Mail, Github, Linkedin, Dribbble, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -11,7 +11,7 @@ export default function Contact() {
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Get In Touch</h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Let's work together to create something amazing. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              Let&apos;s work together to create something amazing. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
           </div>
         </Reveal>
@@ -69,13 +69,13 @@ export default function Contact() {
 
           <Reveal animation="slideRight" delay={0.6}>
             <div className="bg-white/[0.02] border border-white/10 rounded-xl p-8 hover:bg-white/[0.04] transition-all duration-300">
-              <h3 className="text-xl font-medium mb-6">Let's Start a Conversation</h3>
+              <h3 className="text-xl font-medium mb-6">Let&apos;s Start a Conversation</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you.
+                  Whether you have a project in mind, want to collaborate, or just want to say hello, I&apos;d love to hear from you.
                 </p>
                 <p>
-                  I'm particularly interested in:
+                  I&apos;m particularly interested in:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>Web development projects</li>

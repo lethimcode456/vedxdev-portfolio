@@ -1,17 +1,14 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
 interface ProjectImageProps {
-  src: string;
-  alt: string;
   fallbackColor: string;
   title: string;
   icon?: string;
 }
 
-export default function ProjectImage({ src, alt, fallbackColor, title, icon = "📱" }: ProjectImageProps) {
-  const [imageError, setImageError] = useState(false);
+export default function ProjectImage({ fallbackColor, title, icon = "📱" }: ProjectImageProps) {
+  const [imageError] = useState(true);
 
   if (imageError) {
     return (

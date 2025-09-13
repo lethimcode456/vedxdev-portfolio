@@ -34,8 +34,6 @@ export default function Projects() {
             <div className="h-full project-card group">
               {/* Project Image */}
               <ProjectImage
-                src={p.image}
-                alt={p.title}
                 fallbackColor={p.fallbackColor}
                 title={p.title}
                 icon={p.icon}

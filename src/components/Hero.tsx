@@ -1,28 +1,15 @@
 "use client";
 import Link from "next/link";
 import Reveal from "./Reveal";
-import { useEffect, useState } from "react";
-import { Download,Github,Dribbble ,Mail, Linkedin } from "lucide-react";  
+import { Download } from "lucide-react";  
 import Image from "next/image";
 import { JetBrains_Mono } from 'next/font/google';
-import { animate } from "framer-motion";
 
 const jetbrains = JetBrains_Mono({ subsets: ['latin'] });
 
 
 
 export default function Hero() {
-  const [time, setTime] = useState<string>("");
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      const opts: Intl.DateTimeFormatOptions = { hour: "2-digit", minute: "2-digit" };
-      setTime(new Intl.DateTimeFormat(undefined, opts).format(now));
-    };
-    update();
-    const id = setInterval(update, 30_000);
-    return () => clearInterval(id);
-  }, []);
 
   return (
     <section id="about" className="w-full max-w-4xl pt-32 pb-24 mx-auto px-4 ">
@@ -63,19 +50,16 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <Reveal animation="fadeUp" delay={0.4}>
+         <Reveal animation="fadeUp" delay={0.4}>
 <div className="max-w-2xl space-y-4 text-[15px] leading-7 text-gray-300">
         <p>
-  Hi, I'm <span className="word-highlight">Vedant</span>. I'm a 20-year-old <span className="word-highlight">UI/UX designer</span> and <span className="word-highlight">web developer</span> from <span className="word-highlight">Nagpur, India</span>.
+  Hi, I&apos;m <span className="word-highlight">Vedant</span> — a <span className="word-highlight">UI/UX designer</span> and <span className="word-highlight">web developer</span> based in <span className="word-highlight">Nagpur, India</span>.
 </p>
 <p>
-  I work mainly with <span className="word-highlight">Next.js</span> and the <span className="word-highlight">MERN stack</span>, focusing on building websites that are not just <span className="word-highlight">functional</span> but also <span className="word-highlight">clean</span>, <span className="word-highlight">aesthetic</span>, and <span className="word-highlight">easy to use</span>. I like to code, but only when things also <span className="word-highlight">look good</span>.
+  I specialize in building <span className="word-highlight">clean</span>, <span className="word-highlight">minimal</span>, and <span className="word-highlight">functional</span> web experiences using <span className="word-highlight">Next.js</span> and the <span className="word-highlight">MERN stack</span>. For me, design and development go hand-in-hand — I like to code, but only when it <span className="word-highlight">looks good</span> too.
 </p>
 <p>
-  My approach is <span className="word-highlight">detail-driven</span> — from typography to spacing — because small choices shape the entire <span className="word-highlight">user experience</span>. I enjoy creating <span className="word-highlight">minimal</span>, <span className="word-highlight">fast</span>, and <span className="word-highlight">accessible</span> products.
-</p>
-<p>
-  Outside of work, I spend time with <span className="word-highlight">music</span>, <span className="word-highlight">running</span>, or playing <span className="word-highlight">badminton</span>. These keep me creative, focused, and balanced.
+  When I&apos;m not working, I spend time with <span className="word-highlight">music</span>, which keeps me creative and balanced.
 </p>
 </div>
 
@@ -86,6 +70,19 @@ export default function Hero() {
               <Download className="w-4 h-4 text-gray-300 transition-colors group-hover:text-[#F4CE14]" aria-hidden />
               Download Resume
             </Link>
+          </div>
+        </Reveal>
+
+        <Reveal animation="fadeUp" delay={0.8}>
+          <div className="mt-6 text-center">
+            <button 
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-gray-400 hover:text-white transition-colors duration-200 text-sm group"
+            >
+              <span className="group-hover:text-[#F4CE14] transition-colors duration-200">
+                Want to contact me?
+              </span>
+            </button>
           </div>
         </Reveal>
       </div>

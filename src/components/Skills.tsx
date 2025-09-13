@@ -1,16 +1,9 @@
 "use client";
 import Image from "next/image";
+import React from "react";
 import Reveal from "./Reveal";
 import { 
-  CLogo,
-  JavaScriptLogo,
-  TypeScriptLogo,
-  CSSLogo,
-  NextJSLogo,
   ExpressLogo,
-  TailwindLogo,
-  NodeJSLogo,
-  MongoLogo,
   SupabaseLogo
 } from "./SkillLogos";
 
@@ -18,7 +11,7 @@ const skillCategories: Array<{
   title: string;
   skills: Array<{
     name: string;
-    icon: any;
+    icon: string | React.ComponentType<{ className?: string }>;
     type: "svg" | "image";
   }>;
 }> = [
@@ -85,14 +78,14 @@ export default function Skills() {
                       <div className="flex-shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/[0.02] text-gray-300 hover:text-white hover:border-[#F4CE14] transition-all duration-300 hover:scale-105">
                         {skill.type === "image" ? (
                           <Image
-                            src={skill.icon}
+                            src={skill.icon as string}
                             alt={skill.name}
                             width={16}
                             height={16}
                             className="w-4 h-4"
                           />
                         ) : (
-                          <skill.icon className="w-4 h-4" />
+                          React.createElement(skill.icon as React.ComponentType<{ className?: string }>, { className: "w-4 h-4" })
                         )}
                         <span className="text-sm">{skill.name}</span>
                       </div>

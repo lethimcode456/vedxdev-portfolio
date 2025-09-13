@@ -1,6 +1,6 @@
 "use client";
 import { useRef, type ReactNode } from "react";
-import { motion, animate, useMotionValue, useAnimationFrame } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 
 type MagnetProps = {
   children: ReactNode;
@@ -25,8 +25,8 @@ export default function Magnet({ children, intensity = 1 }: MagnetProps) {
     const targetX = localX * intensity;
     const targetY = localY * intensity;
 
-    animate(x, targetX, { type: "tween", duration: 0.4, ease: [0, 0, 1, 1] });
-    animate(y, targetY, { type: "tween", duration: 0.4, ease: [0, 0, 1, 1] });
+    x.set(targetX);
+    y.set(targetY);
   });
 
   return (
@@ -37,8 +37,8 @@ export default function Magnet({ children, intensity = 1 }: MagnetProps) {
       onMouseLeave={() => {
         isHoveringRef.current = false;
         lastPoint.current = null;
-        animate(x, 0, { type: "spring", stiffness: 400, damping: 20, mass: 3 });
-        animate(y, 0, { type: "spring", stiffness: 400, damping: 20, mass: 3 });
+        x.set(0);
+        y.set(0);
       }}
       onMouseMove={(e) => {
         lastPoint.current = { x: e.clientX, y: e.clientY };
