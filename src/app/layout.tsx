@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import SkillsBar from "@/components/SkillsBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,11 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={`${inter.variable} antialiased bg-black text-white`}>
+      <body suppressHydrationWarning className={`${inter.variable} antialiased bg-black text-white overflow-hidden`}>
         <Navbar />
-        <main className="min-h-screen">
+        <main className="h-screen">
           {children}
         </main>
+        <SkillsBar />
       </body>
     </html>
   );

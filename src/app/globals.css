@@ -16,12 +16,16 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   background: #000000;
   color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Utilities */
@@ -100,6 +104,20 @@ body {
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Slow scrolling animation for skills bar */
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 30s linear infinite;
 }
 
 /* Landing Animation */
