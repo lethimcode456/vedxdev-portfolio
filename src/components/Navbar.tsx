@@ -1,42 +1,39 @@
 "use client";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
-  const navItems = useMemo(
-    () => [
-      { href: "#about", label: "About" },
-      { href: "#projects", label: "Projects" },
-      { href: "#blog", label: "Blog" },
-      { href: "#contact", label: "Contact Me" },
-    ],
-    []
-  );
+  const [time, setTime] = useState<string>("");
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      // Get time in IST (India Standard Time - Asia/Kolkata)
+      const istTime = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Kolkata",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      }).format(now);
+      
+      setTime(istTime);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="pointer-events-none fixed top-0 left-0 right-0 z-40">
-      <nav className={`pointer-events-auto mx-auto mt-4 flex justify-center`}>
-        <div className="bg-white/[0.02] border border-white/10 rounded-full px-6 py-3 backdrop-blur-sm hover:bg-white/[0.04] transition-all duration-300 inline-flex items-center gap-10 animate-fade-in">
-          {navItems.map((i) => (
-            <button 
-              key={i.href}
-              onClick={() => scrollToSection(i.href)} 
-              className="relative text-gray-200 hover:text-white text-[16px] cursor-pointer transition-all duration-200 hover:scale-105 group"
-            >
-              <span className="relative z-10">{i.label}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#F4CE14] transition-all duration-300 group-hover:w-full"></span>
-            </button>
-          ))}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80   border-gray-800">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex ">
+        
+        <div className="text-gray-400 text-sm">
+          Nagpur, IN <span className="text-white font-mono">{time || "--:--:--"}</span>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 }
-
-
