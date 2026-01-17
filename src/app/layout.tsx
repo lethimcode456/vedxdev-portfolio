@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Epilogue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import SkillsBar from "@/components/SkillsBar";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
-const inter = Inter({
+const epilogue = Epilogue({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-epilogue",
   display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: "normal",
+  opticalSizing: true,
 });
 
 export const metadata: Metadata = {
@@ -24,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={`${inter.variable} antialiased bg-black text-white overflow-hidden`}>
+      <body suppressHydrationWarning className={`${epilogue.variable} antialiased bg-black text-white overflow-hidden`}>
+        <SmoothCursor />
         <Navbar />
         <main className="h-screen">
           {children}
         </main>
-        <SkillsBar />
       </body>
     </html>
   );
