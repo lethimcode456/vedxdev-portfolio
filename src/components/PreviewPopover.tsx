@@ -3,7 +3,6 @@
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import gsap from "gsap";
 import { motion } from "framer-motion";
 import { X } from "lucide-react"; // Using Lucide for the close icon
 

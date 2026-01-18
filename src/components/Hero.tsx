@@ -146,7 +146,7 @@ export default function Hero() {
           <div className="space-y-2 text-center">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">vedXdev</h1>
             <p className="text-xs md:text-sm lg:text-base text-gray-400 leading-relaxed max-w-sm mx-auto">
-             I create websites where polish and performance go hand in hand. I don't ship anything until I'm genuinely proud of it.
+             I create websites where polish and performance go hand in hand. I don&apos;t ship anything until I&apos;m genuinely proud of it.
             </p>
           </div>
         </div>
