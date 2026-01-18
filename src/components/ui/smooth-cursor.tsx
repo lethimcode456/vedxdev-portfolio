@@ -1,6 +1,6 @@
 "use client"
 
-import { FC, useEffect, useRef, useState } from "react"
+import { FC, useEffect, useRef } from "react"
 import { motion, useSpring } from "framer-motion"
 
 interface Position {
@@ -174,6 +174,7 @@ export function SmoothCursor({
       document.body.style.cursor = "auto"
       if (rafId) cancelAnimationFrame(rafId)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

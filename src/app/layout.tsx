@@ -10,7 +10,6 @@ const epilogue = Epilogue({
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: "normal",
-  opticalSizing: true,
 });
 
 export const metadata: Metadata = {
