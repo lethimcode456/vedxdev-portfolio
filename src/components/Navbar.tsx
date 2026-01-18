@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="px-4 md:px-8 flex items-center justify-between gap-2 md:gap-3">
         <div className="flex items-center gap-2 md:gap-3">
           <Image 
-            src="/vedxdev.png" 
+            src="/vedXdev.png" 
             alt="logo" 
             width={150} 
             height={150} 
