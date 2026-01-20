@@ -59,7 +59,7 @@ export default function Navbar() {
         
         <InteractiveHoverButton className="text-xs md:text-sm px-4 md:px-6 h-9 md:h-11">
           <a href='/Vedant_Bagwale_Resume.pdf'> 
-          Download Resume
+          Resume
           </a>
         </InteractiveHoverButton>
       </div>
