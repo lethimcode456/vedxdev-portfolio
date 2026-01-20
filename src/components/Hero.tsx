@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
-import { FaXTwitter, FaLinkedin, FaDribbble } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedin, FaGithub, FaBehance } from "react-icons/fa6";
 import { projects } from "@/data/projects";
 import { brands } from "@/data/brands";
 import { PreviewPopover } from "@/components/PreviewPopover";
@@ -124,7 +124,7 @@ export default function Hero() {
                 <FaXTwitter className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
               <Link
-                href="https://linkedin.com/in/vedxdev"
+                href="https://linkedin.com/in/vedant-bagwale"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#0a66c2] transition-colors duration-200"
@@ -133,13 +133,22 @@ export default function Hero() {
                 <FaLinkedin className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
               <Link
-                href="https://dribbble.com/vedxdev"
+                href="https://www.behance.net/vedantbagwale"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#ea4c89] transition-colors duration-200"
+                className="text-gray-400 hover:text-[#053eff] transition-colors duration-200"
                 aria-label="Dribbble"
               >
-                <FaDribbble className="w-4 h-4 md:w-5 md:h-5" />
+                <FaBehance className="w-4 h-4 md:w-5 md:h-5" />
+              </Link>
+              <Link
+                href="https://github.com/vedX-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#6cc644] transition-colors duration-200"
+                aria-label="GitHub"
+              >
+                <FaGithub className="w-4 h-4 md:w-5 md:h-5" />
               </Link>
             </div>
           </div>
@@ -153,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom: Projects and Brands Sections */}
-      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 px-8 md:px-8">
         {/* Projects Section */}
         <div className="flex-1">
           <h2 className="text-xs md:text-sm uppercase text-gray-400 mb-3 md:mb-4 tracking-wider text-center md:text-left">
@@ -173,7 +182,7 @@ export default function Hero() {
         {/* Brands Section */}
         <div className="flex-1">
           <h2 className="text-xs md:text-sm uppercase text-gray-400 mb-3 md:mb-4 tracking-wider text-center md:text-left">
-            BRANDS I&apos;VE HELPED_
+            CLIENTS I&apos;VE HELPED_
           </h2>
           <div className="space-y-0 border-t border-gray-700">
             {brands.map((brand, index) => (

@@ -58,8 +58,8 @@ export default function Navbar() {
         </div>
         
         <InteractiveHoverButton className="text-xs md:text-sm px-4 md:px-6 h-9 md:h-11">
-          <a href='mailto:vedantbagwale.dev@gmail.com'> 
-          OPEN TO WORK
+          <a href='/Vedant_Bagwale_Resume.pdf'> 
+          Download Resume
           </a>
         </InteractiveHoverButton>
       </div>
