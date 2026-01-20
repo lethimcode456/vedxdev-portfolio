@@ -154,7 +154,7 @@ export default function Hero() {
           </div>
           <div className="space-y-2 text-center">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white">vedXdev</h1>
-            <p className="text-xs md:text-sm lg:text-base text-gray-400 leading-relaxed max-w-sm mx-auto px-4 md:px-8">
+            <p className="text-xs md:text-sm lg:text-base text-gray-400 leading-relaxed max-w-sm mx-auto px-4 md:px-6">
              I create websites where polish and performance go hand in hand. I don&apos;t ship anything until I&apos;m genuinely proud of it.
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom: Projects and Brands Sections */}
-      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 px-4 md:px-8">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12 px-4 md:px-6">
         {/* Projects Section */}
         <div className="flex-1">
           <h2 className="text-xs md:text-sm uppercase text-gray-400 mb-3 md:mb-4 tracking-wider text-center md:text-left">
